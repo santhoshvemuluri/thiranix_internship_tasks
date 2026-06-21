@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import HuberRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 def main():
@@ -43,8 +43,8 @@ def main():
     # ==========================================
     # 3. Use Regression Models for Prediction
     # ==========================================
-    print("Training the Linear Regression model...")
-    model = LinearRegression()
+    print("Training the Huber Regression model for greater robustness...")
+    model = HuberRegressor()
     model.fit(X_train, y_train)
 
     # Forecast the trend on the test set
